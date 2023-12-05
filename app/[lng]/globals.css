@@ -1,0 +1,227 @@
+@tailwind base;
+
+@layer base {
+  @font-face {
+    font-family: "Pretendard";
+    src: url("/fonts/Pretendard-Thin.otf") format("opentype");
+    font-weight: 100;
+    font-display: swap;
+    letter-spacing: -0.04em;
+  }
+  @font-face {
+    font-family: "Pretendard";
+    src: url("/fonts/Pretendard-Light.otf") format("opentype");
+    font-weight: 300;
+    font-display: swap;
+    letter-spacing: -0.04em;
+  }
+  @font-face {
+    font-family: "Pretendard";
+    src: url("/fonts/Pretendard-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-display: swap;
+    letter-spacing: -0.04em;
+  }
+  @font-face {
+    font-family: "Pretendard";
+    src: url("/fonts/Pretendard-Medium.otf") format("opentype");
+    font-weight: 500;
+    font-display: swap;
+    letter-spacing: -0.04em;
+  }
+  @font-face {
+    font-family: "Pretendard";
+    src: url("/fonts/Pretendard-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-display: swap;
+    letter-spacing: -0.04em;
+  }
+  @font-face {
+    font-family: "Pretendard";
+    src: url("/fonts/Pretendard-Black.otf") format("opentype");
+    font-weight: 900;
+    font-display: swap;
+    letter-spacing: -0.04em;
+  }
+
+  html {
+    font-family: "Pretendard", "Noto Sans KR", "sans-serif";
+  }
+
+  body {
+    line-height: normal;
+  }
+}
+
+.font-sans-kr {
+  font-family: "Noto Sans KR", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+  }
+
+  /* clears the 'X' from Internet Explorer */
+  input[type="search"]::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+  input[type="search"]::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  /* clears the 'X' from Chrome */
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+  }
+
+  [type="checkbox"] {
+    appearance: none;
+  }
+
+  /* ( 크롬, 사파리, 오페라, 엣지 ) 동작 */
+  .scroll::-webkit-scrollbar {
+    display: none;
+  }
+  .scroll {
+    -ms-overflow-style: none; /* 인터넷 익스플로러 */
+    scrollbar-width: none; /* 파이어폭스 */
+  }
+}
+
+.text-overflow {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-word;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.text-overflo {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-word;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+/* 한줄 말줄임 처리*/
+.text-overflow-1 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-word;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  line-height: 1.3rem;
+}
+
+/* 에디터 영역 css */
+
+.ck.ck-editor__editable:not(.ck-editor__nested-editable) {
+  min-height: 300px;
+  margin-bottom: 20px;
+}
+
+.ck.ck-editor__main > .ck-editor__editable:not(.ck-focused).ck-read-only {
+  border: none;
+  min-height: 00px;
+}
+.ck-content > h2 {
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+.ck-content > h3 {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+.ck-content > h4 {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+.ck-content > p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.ck-content > p > strong,
+.ck-content > h2 > strong,
+.ck-content > h3 > strong,
+.ck-content > h4 > strong {
+  margin-bottom: 16px;
+}
+.ck-content > blockquote {
+  margin: 32px 0px;
+  border-left: 4px solid #34a3db !important;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background: #f8f9fa;
+  padding: 16px 16px 16px 32px;
+  font-size: 18px;
+}
+
+.ck-content > ul {
+  display: flex;
+  flex-flow: column;
+  gap: 8px;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+  font-size: 16px;
+}
+.ck-content > ol {
+  display: flex;
+  flex-flow: column;
+  gap: 8px;
+  list-style-type: decimal;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+  font-size: 16px;
+}
+
+.ck-content > li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+  font-size: 16px;
+}
+
+.ck-content > p > a {
+  color: #34a3db;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+.custom-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
